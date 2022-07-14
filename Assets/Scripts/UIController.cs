@@ -18,16 +18,14 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
-       
         RootButton();
-        pauseButton.clicked += PauseGame;
-        resumeButton.clicked += ResumeGame;
-        restartButton.clicked += RestartScene;
+        ButtonClickedAdd();
     }
     void Update()
     {
 
     }
+
 
     private void RootButton()
     {
@@ -37,6 +35,12 @@ public class UIController : MonoBehaviour
         resumeButton = root.Q<Button>("ResumeButton");
         restartButton = root.Q<Button>("RestartButton");
         pausePanel = root.Q<VisualElement>("PausePanel");
+    }
+    void ButtonClickedAdd()
+    {
+        pauseButton.clicked += PauseGame;
+        resumeButton.clicked += ResumeGame;
+        restartButton.clicked += RestartScene;
     }
 
 
