@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(UIDocument))]
 public class UIController : MonoBehaviour
 {
    
@@ -29,12 +30,12 @@ public class UIController : MonoBehaviour
 
     private void RootButton()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-        pauseButton = root.Q<Button>("PauseButton");
-        protectButton = root.Q<Button>("ProtectButton");
-        resumeButton = root.Q<Button>("ResumeButton");
-        restartButton = root.Q<Button>("RestartButton");
-        pausePanel = root.Q<VisualElement>("PausePanel");
+        var _root = GetComponent<UIDocument>().rootVisualElement;
+        pauseButton = _root.Q<Button>("PauseButton");
+        protectButton = _root.Q<Button>("ProtectButton");
+        resumeButton = _root.Q<Button>("ResumeButton");
+        restartButton = _root.Q<Button>("RestartButton");
+        pausePanel = _root.Q<VisualElement>("PausePanel");
     }
     void ButtonClickedAdd()
     {
