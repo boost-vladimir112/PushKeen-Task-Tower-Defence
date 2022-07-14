@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(Rigidbody2D))]
+
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _lifeTime = 8f;
+    [SerializeField] protected float _lifeTime = 8f;
 
-    [SerializeField] private float _bulletSpeed = 60f;
+    [SerializeField] protected float _bulletSpeed = 60f;
 
-    [SerializeField] private int _damage = 2;
+    [SerializeField] protected int _damage = 2;
 
     Rigidbody2D rb;
 
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+
     }
     private void Update()
     {
@@ -32,12 +32,13 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Tower"))
+        if(other.gameObject.CompareTag("EnemyTower"))
         {
             other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
         }
     }
-    void BulletLifeTime()
+   
+    protected void BulletLifeTime()
     {
         _lifeTime -= Time.deltaTime;
         if(_lifeTime <= 0f)
@@ -46,7 +47,7 @@ public class Bullet : MonoBehaviour
         }
     }
   
-    private void Shot()
+    protected void Shot()
     {
         transform.Translate(Vector2.right * _bulletSpeed * Time.deltaTime);
     }
