@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Tower"))
         {
-            other.gameObject.GetComponent<Tower>().TakeDamage(2);
+            other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
         }
     }
     void BulletLifeTime()

@@ -23,9 +23,7 @@ public class Tower : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(_health);
         EndGame();
-
     }
 
 }
