@@ -5,15 +5,15 @@ using UnityEngine;
 //[RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _lifeTime = 3f;
+    [SerializeField] private float _lifeTime = 8f;
 
-    [SerializeField] private float bulletSpeed = 60f;
+    [SerializeField] private float _bulletSpeed = 60f;
 
-    [SerializeField] private GameObject _bullet;
+    [SerializeField] private int _damage = 2;
 
     Rigidbody2D rb;
 
-    
+    public int Damage { get => _damage; set => _damage = value; }
 
     private void Start()
     {
@@ -23,14 +23,23 @@ public class Bullet : MonoBehaviour
     {
         BulletLifeTime();
         Shot();
+        
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Tower"))
+        {
+            other.gameObject.GetComponent<Tower>().TakeDamage(2);
+        }
+    }
     void BulletLifeTime()
     {
+        _lifeTime -= Time.deltaTime;
         if(_lifeTime <= 0f)
         {
             Destroy(gameObject);
@@ -39,7 +48,7 @@ public class Bullet : MonoBehaviour
   
     private void Shot()
     {
-        transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * _bulletSpeed * Time.deltaTime);
     }
 
 

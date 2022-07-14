@@ -29,9 +29,12 @@ public class GunController : MonoBehaviour
 
     private void TransformGun()
     {
-        Vector3 difference = _camera.ScreenToWorldPoint(Input.mousePosition + transform.position);
-        float _rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, _rotationZ + _offset);
+        var mousePosition = Input.mousePosition;
+    
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition); 
+        var angle = Vector2.Angle(Vector2.right, mousePosition - transform.position);
+        transform.eulerAngles = new Vector3(0f, 0f, transform.position.y < mousePosition.y ? angle : -angle);
     }
 }
+
 

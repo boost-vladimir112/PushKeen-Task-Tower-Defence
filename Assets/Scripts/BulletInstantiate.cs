@@ -15,6 +15,7 @@ public class BulletInstantiate : MonoBehaviour
         if(Input.anyKeyDown)
         {
             InstantiateBullet();
+
         }
     }
 
