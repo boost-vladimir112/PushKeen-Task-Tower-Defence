@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] private int _health = 6;
-    [SerializeField] private GameObject tower;
+
 
     Bullet bullet;
     
