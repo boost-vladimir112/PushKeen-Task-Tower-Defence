@@ -5,11 +5,11 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
 
-    [SerializeField] private int health;
-    [SerializeField] private int currentHealth;
+    [SerializeField] private int _health;
+    [SerializeField] private int _currentHealth;
 
-    public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
-    public int Health { get => health; set => health = value; }
+    public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+    public int Health { get => _health; set => _health = value; }
 
     protected void DestroyBuild()
     {
