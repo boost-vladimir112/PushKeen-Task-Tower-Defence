@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
         }
     }
   
-    protected void Shot()
+    private void Shot()
     {
         transform.Translate(Vector2.right * _bulletSpeed * Time.deltaTime);
     }

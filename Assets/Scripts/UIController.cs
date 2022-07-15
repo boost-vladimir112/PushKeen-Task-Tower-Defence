@@ -11,20 +11,29 @@ public class UIController : MonoBehaviour
     public Button pauseButton;
     public Button protectButton;
 
+    public VisualElement pausePanel;
+
     public Button resumeButton;
     public Button restartButton;
 
-    public VisualElement pausePanel;
+   [SerializeField] Field field;
+
+    [SerializeField] private GameObject _field;
+
+    private bool _canProtect;
+    
 
 
     void Start()
     {
         RootButton();
         ButtonClickedAdd();
+        _canProtect = true;
+
     }
     void Update()
     {
-
+        
     }
 
 
@@ -42,6 +51,8 @@ public class UIController : MonoBehaviour
         pauseButton.clicked += PauseGame;
         resumeButton.clicked += ResumeGame;
         restartButton.clicked += RestartScene;
+        protectButton.clicked += Protect;
+
     }
 
 
@@ -72,8 +83,28 @@ public class UIController : MonoBehaviour
         ClosePausePanel();
         Time.timeScale = 1;
     }
+    private void Protect()
+    {
+        if (!_canProtect) return;
+        _canProtect = false;
+        
+            _field.SetActive(true);
+            field.CurrentHealth = field.Health;
+            protectButton.visible = false;
+        
+        StartCoroutine(Reload());
 
+        
+       
 
+    }
+
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(15);
+        _canProtect = true;
+        protectButton.visible = true;
+    }
 
 
 

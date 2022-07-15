@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EnemyBullet : Bullet
 {
-
+    private void Update()
+    {
+        Shot();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PlayerTower"))
@@ -18,5 +21,9 @@ public class EnemyBullet : Bullet
             Destroy(gameObject);
         }
     }
-
+ 
+    private void Shot()
+    {
+        transform.Translate(Vector2.left * _bulletSpeed * Time.deltaTime);
+    }
 }

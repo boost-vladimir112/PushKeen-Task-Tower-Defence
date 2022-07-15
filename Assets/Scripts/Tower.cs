@@ -5,23 +5,26 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
 
-    [SerializeField] protected int _health;
-    [SerializeField] protected int _currentHealth;
-    
+    [SerializeField] private int health;
+    [SerializeField] private int currentHealth;
+
+    public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public int Health { get => health; set => health = value; }
+
     protected void DestroyBuild()
     {
-        if(_currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
+        CurrentHealth -= damage;
     }
     private void Start()
     {
-        _currentHealth = _health;
+        CurrentHealth = Health;
     }
     private void Update()
     {
