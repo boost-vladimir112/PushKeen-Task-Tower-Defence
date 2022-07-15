@@ -31,12 +31,7 @@ public class UIController : MonoBehaviour
         _canProtect = true;
 
     }
-    void Update()
-    {
-        
-    }
-
-
+   
     private void RootButton()
     {
         var _root = GetComponent<UIDocument>().rootVisualElement;

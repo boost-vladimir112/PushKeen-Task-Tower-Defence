@@ -15,10 +15,6 @@ public class Bullet : MonoBehaviour
 
     public int Damage { get => _damage; set => _damage = value; }
 
-    private void Start()
-    {
-
-    }
     private void Update()
     {
         BulletLifeTime();
