@@ -39,7 +39,10 @@ public class UIController : MonoBehaviour
     }
     private void Update()
     {
-        Timer();
+        if(!_canProtect)
+        {
+            Timer();
+        }
     }
 
     private void RootButton()
@@ -99,11 +102,12 @@ public class UIController : MonoBehaviour
         protectButton.visible = false;
         inactiveButton.visible = true;
         timer.visible = true;
-            
+           
         StartCoroutine(Reload());
     }
     void Timer()
     {
+
         timer.text = _reload.ToString();
         _reload -= Time.deltaTime;
         timer.text = "0:" + Mathf.Round(_reload).ToString();
