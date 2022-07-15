@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PlayerTower
   - EnemyTower
+  - Tower
+  - PlayerField
+  - EnemyField
   layers:
   - Default
   - TransparentFX

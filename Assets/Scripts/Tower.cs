@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private int _health = 6;
-
-
-    Bullet bullet;
+    [SerializeField] protected int _health;
     
-    
-    private void EndGame()
+    protected void DestroyBuild()
     {
         if(_health <= 0)
         {
@@ -23,7 +19,7 @@ public class Tower : MonoBehaviour
     }
     private void Update()
     {
-        EndGame();
+        DestroyBuild();
     }
 
 }

@@ -10,6 +10,12 @@ public class EnemyBullet : Bullet
         if (other.gameObject.CompareTag("PlayerTower"))
         {
             other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("PlayerField"))
+        {
+            other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
+            Destroy(gameObject);
         }
     }
 

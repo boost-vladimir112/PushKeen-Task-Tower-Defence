@@ -26,16 +26,20 @@ public class Bullet : MonoBehaviour
         
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("EnemyTower"))
         {
             other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
+            Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("EnemyField"))
+        {
+            other.gameObject.GetComponent<Tower>().TakeDamage(_damage);
+            Destroy(gameObject);
+        }
+
     }
    
     protected void BulletLifeTime()
