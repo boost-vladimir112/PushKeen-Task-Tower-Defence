@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+
     [SerializeField] protected int _health;
+    [SerializeField] protected int _currentHealth;
     
     protected void DestroyBuild()
     {
-        if(_health <= 0)
+        if(_currentHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
     public void TakeDamage(int damage)
     {
-        _health -= damage;
+        _currentHealth -= damage;
+    }
+    private void Start()
+    {
+        _currentHealth = _health;
     }
     private void Update()
     {
