@@ -25,12 +25,6 @@ public class EnemyBullet : Bullet
  
     private void Shot()
     {
- 
         transform.Translate(Vector2.left * _bulletSpeed * Time.deltaTime);
-        
-
     }
-
-
-
 }

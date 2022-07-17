@@ -7,8 +7,8 @@ public class UIHealthBar : MonoBehaviour
 {
     [SerializeField] Tower _playerTower;
     [SerializeField] Tower _enemyTower;
-    public ProgressBar playerFillHP;
-    public ProgressBar enemyFillHP;
+    private ProgressBar playerFillHP;
+    private ProgressBar enemyFillHP;
     private void SetMaxHealth()
     {
         playerFillHP.highValue = _playerTower.Health;

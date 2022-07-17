@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : GunController
+public class EnemyAI : MonoBehaviour
 
 {
     [SerializeField] private GameObject _field;
@@ -10,7 +10,6 @@ public class EnemyAI : GunController
     private int randomCount;
     private void Update()
     {
-        PressToShoot();
         if (Input.anyKeyDown)
         {
             RandomField();

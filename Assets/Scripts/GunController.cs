@@ -4,27 +4,12 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-
     [SerializeField] private Camera _camera;
-
-    BulletInstantiate _bulletInstantiate;
-
-
-
 
     void Update()
     {
         TransformGun();
-        PressToShoot();
-    }
-
-   
-    protected void PressToShoot()
-    {
-        if (Input.anyKeyDown)
-        {
-            _bulletInstantiate = GetComponent<BulletInstantiate>();
-        }
+       
     }
 
     private void TransformGun()
