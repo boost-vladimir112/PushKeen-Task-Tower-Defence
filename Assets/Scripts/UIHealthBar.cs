@@ -5,21 +5,26 @@ using UnityEngine.UIElements;
 
 public class UIHealthBar : MonoBehaviour
 {
+    [SerializeField] Tower _playerTower;
     public ProgressBar playerFillHP;
-    public void SetMaxHealth(int health)
+    private void SetMaxHealth()
     {
-        playerFillHP.highValue = health;
-        playerFillHP.value = health;
+        playerFillHP.highValue = _playerTower.Health;
+        playerFillHP.value = _playerTower.CurrentHealth;
     }
-    public void SetHealth(int health)
+    private void SetHealth()
     {
-        playerFillHP.value = health;
+        playerFillHP.value = _playerTower.CurrentHealth;
     }
     private void Start()
     {
         var _root = GetComponent<UIDocument>().rootVisualElement;
         playerFillHP = _root.Q<ProgressBar>("PlayerFillHp");
-        
+        SetMaxHealth();
+    }
+    private void Update()
+    {
+        SetHealth();
     }
 
 
