@@ -1,0 +1,41 @@
+.123 .unity-progress-bar__background {
+    background-image: url('project://database/Assets/Sprites/hpBar.png?fileID=21300000&guid=45311f95844e0bc4bafdf8c649e26db8&type=3#hpBar');
+    align-items: stretch;
+    height: 15px;
+    flex-basis: auto;
+    position: absolute;
+    width: 238px;
+    top: -1px;
+    left: -4px;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    opacity: 1;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    -unity-background-image-tint-color: rgb(248, 248, 248);
+    -unity-background-scale-mode: stretch-to-fill;
+    border-left-color: rgba(0, 64, 207, 255);
+    border-right-color: rgba(0, 64, 207, 255);
+    border-top-color: rgba(0, 64, 207, 255);
+    border-bottom-color: rgba(0, 64, 207, 255);
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    cursor: initial;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-shrink: 1;
+    color: rgba(219, 42, 42, 255);
+}
+
+.unity-progress-bar {
+    background-color: rgba(255, 255, 255, 255);
+}
+
+.unity-progress-bar__progress {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+    background-image: url('project://database/Assets/Sprites/hpBar(fill).png?fileID=21300000&guid=02f986f716f8f4442baff2f59408c714&type=3#hpBar(fill)');
+    background-color: rgba(255, 255, 255, 255);
+}

@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
     public Button resumeButton;
     public Button restartButton;
 
-    public ProgressBar playerFillHP;
+    
 
     [SerializeField] Field field;
 
@@ -57,7 +57,7 @@ public class UIController : MonoBehaviour
         pausePanel = _root.Q<VisualElement>("PausePanel");
         inactiveButton = _root.Q<VisualElement>("InActiveButton");
         timer = _root.Q<Label>("Timer");
-        playerFillHP = _root.Q<ProgressBar>("PlayerFillHp");
+        
     }
     void ButtonClickedAdd()
     {
@@ -67,16 +67,7 @@ public class UIController : MonoBehaviour
         protectButton.clicked += Protect;
     }
     
-    public void SetMaxHealth(int health)
-    {
-        playerFillHP.highValue = health;
-        playerFillHP.value = health;
-    }
-    public void SetHealth(int health)
-    {
-        playerFillHP.value = health;
-    }
-
+  
 
     public void RestartScene()
     {
