@@ -1197,6 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerTower: {fileID: 1730274414}
+  _enemyTower: {fileID: 1808649121}
 --- !u!1001 &1047746509506950046
 PrefabInstance:
   m_ObjectHideFlags: 0

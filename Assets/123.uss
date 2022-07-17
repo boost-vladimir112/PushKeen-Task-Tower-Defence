@@ -16,10 +16,10 @@
     background-color: rgb(255, 255, 255);
     -unity-background-image-tint-color: rgb(248, 248, 248);
     -unity-background-scale-mode: stretch-to-fill;
-    border-left-color: rgba(0, 64, 207, 255);
-    border-right-color: rgba(0, 64, 207, 255);
-    border-top-color: rgba(0, 64, 207, 255);
-    border-bottom-color: rgba(0, 64, 207, 255);
+    border-left-color: rgba(255, 255, 255, 255);
+    border-right-color: rgba(255, 255, 255, 255);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
     display: flex;
     visibility: visible;
     overflow: visible;
@@ -38,4 +38,12 @@
     -unity-background-image-tint-color: rgba(255, 255, 255, 255);
     background-image: url('project://database/Assets/Sprites/hpBar(fill).png?fileID=21300000&guid=02f986f716f8f4442baff2f59408c714&type=3#hpBar(fill)');
     background-color: rgba(255, 255, 255, 255);
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -unity-background-scale-mode: stretch-to-fill;
+    align-items: auto;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
 }
